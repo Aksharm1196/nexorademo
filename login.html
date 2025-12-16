@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Nexora Login</title>
+      <style>
+            body {
+                  margin: 0;
+                  background: #0b0f14;
+                  color: #e5e7eb;
+                  font-family: Inter, system-ui
+            }
+
+            .wrap {
+                  min-height: 100vh;
+                  display: grid;
+                  place-items: center
+            }
+
+            .card {
+                  width: 360px;
+                  background: #121826;
+                  border: 1px solid #1f2937;
+                  border-radius: 16px;
+                  padding: 24px
+            }
+
+            h1 {
+                  margin: 0 0 6px
+            }
+
+            p {
+                  color: #8b94a7;
+                  margin: 0 0 18px
+            }
+
+            input {
+                  width: 100%;
+                  padding: 12px;
+                  border-radius: 10px;
+                  border: 1px solid #1f2937;
+                  background: #0b1220;
+                  color: #e5e7eb;
+                  margin-bottom: 12px
+            }
+
+            button {
+                  width: 100%;
+                  padding: 12px;
+                  border-radius: 12px;
+                  border: none;
+                  background: linear-gradient(135deg, #5eead4, #60a5fa);
+                  font-weight: 700;
+                  cursor: pointer
+            }
+
+            .link {
+                  margin-top: 14px;
+                  text-align: center;
+                  color: #94a3b8
+            }
+      </style>
+</head>
+
+<body>
+      <div class="wrap">
+            <div class="card">
+                  <h1>Welcome back</h1>
+                  <p>Login to your Nexora dashboard</p>
+                  <input placeholder="Business email" />
+                  <input type="password" placeholder="Password" />
+                  <button onclick="location.href='dashboard.html'">Login</button>
+                  <div class="link">Demo account • No OTP yet</div>
+            </div>
+      </div>
+</body>
+
+</html>

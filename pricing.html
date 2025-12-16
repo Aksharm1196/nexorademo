@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Nexora | Pricing</title>
+      <style>
+            body {
+                  margin: 0;
+                  font-family: Inter, system-ui;
+                  background: #0b0f14;
+                  color: #e5e7eb
+            }
+
+            header {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 20px 40px;
+                  border-bottom: 1px solid #1f2937
+            }
+
+            .brand {
+                  font-size: 22px;
+                  font-weight: 800
+            }
+
+            nav a {
+                  margin-left: 20px;
+                  color: #94a3b8;
+                  text-decoration: none;
+                  font-weight: 600
+            }
+
+            nav a:hover {
+                  color: #e5e7eb
+            }
+
+            .container {
+                  padding: 60px 40px;
+                  max-width: 1100px;
+                  margin: auto
+            }
+
+            h1 {
+                  text-align: center;
+                  font-size: 38px;
+                  margin-bottom: 10px
+            }
+
+            .subtitle {
+                  text-align: center;
+                  color: #9ca3af;
+                  margin-bottom: 50px
+            }
+
+            .pricing {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                  gap: 24px
+            }
+
+            .card {
+                  background: #121826;
+                  border: 1px solid #1f2937;
+                  border-radius: 18px;
+                  padding: 28px;
+                  display: flex;
+                  flex-direction: column
+            }
+
+            .card.popular {
+                  border: 2px solid #60a5fa;
+                  transform: scale(1.03)
+            }
+
+            .plan {
+                  font-size: 20px;
+                  font-weight: 800;
+                  margin-bottom: 6px
+            }
+
+            .price {
+                  font-size: 32px;
+                  font-weight: 900;
+                  margin: 10px 0
+            }
+
+            .price span {
+                  font-size: 14px;
+                  color: #9ca3af
+            }
+
+            ul {
+                  padding-left: 18px;
+                  color: #cbd5f5;
+                  flex: 1
+            }
+
+            li {
+                  margin-bottom: 10px
+            }
+
+            .btn {
+                  margin-top: 20px;
+                  padding: 14px;
+                  border-radius: 14px;
+                  border: none;
+                  font-weight: 800;
+                  cursor: pointer
+            }
+
+            .primary {
+                  background: linear-gradient(135deg, #5eead4, #60a5fa)
+            }
+
+            .secondary {
+                  background: #0b1220;
+                  color: #e5e7eb;
+                  border: 1px solid #1f2937
+            }
+
+            .note {
+                  margin-top: 40px;
+                  text-align: center;
+                  color: #94a3b8;
+                  font-size: 14px
+            }
+      </style>
+</head>
+
+<body>
+
+      <header>
+            <div class="brand">Nexora</div>
+            <nav>
+                  <a href="index.html">Home</a>
+                  <a href="demo.html">Demo</a>
+                  <a href="login.html">Login</a>
+            </nav>
+      </header>
+
+      <section class="container">
+            <h1>Simple, honest pricing</h1>
+            <p class="subtitle">No commissions. No confusion. Pay only for what you use.</p>
+
+            <div class="pricing">
+
+                  <!-- BASIC PLAN -->
+                  <div class="card">
+                        <div class="plan">Basic</div>
+                        <div class="price">₹499 <span>/ month</span></div>
+                        <ul>
+                              <li>Client management</li>
+                              <li>Payment tracking (paid / pending)</li>
+                              <li>Manual WhatsApp reminders</li>
+                              <li>Monthly summary dashboard</li>
+                              <li>Single business access</li>
+                              <li>Data stored securely</li>
+                              <li>❌ Auto reminders</li>
+                              <li>❌ Reports download</li>
+                              <li>❌ Priority support</li>
+                        </ul>
+                        <button class="btn secondary" onclick="location.href='login.html'">Start Basic</button>
+                  </div>
+
+                  <!-- PRO PLAN -->
+                  <div class="card popular">
+                        <div class="plan">Pro</div>
+                        <div class="price">₹999 <span>/ month</span></div>
+                        <ul>
+                              <li>Everything in Basic</li>
+                              <li>Auto WhatsApp payment reminders</li>
+                              <li>AI-generated follow-up messages</li>
+                              <li>Payment history & filters</li>
+                              <li>Monthly reports (PDF)</li>
+                              <li>Business settings & branding</li>
+                              <li>Priority support</li>
+                              <li>Future feature access</li>
+                        </ul>
+                        <button class="btn primary" onclick="location.href='login.html'">Upgrade to Pro</button>
+                  </div>
+
+                  <!-- ENTERPRISE PLAN -->
+                  <div class="card">
+                        <div class="plan">Enterprise</div>
+                        <div class="price">Custom</div>
+                        <ul>
+                              <li>Multiple businesses</li>
+                              <li>Team access (staff accounts)</li>
+                              <li>Advanced analytics</li>
+                              <li>Custom integrations</li>
+                              <li>Dedicated onboarding</li>
+                              <li>WhatsApp API setup</li>
+                              <li>Custom AI workflows</li>
+                        </ul>
+                        <button class="btn secondary">Contact Sales</button>
+                  </div>
+
+            </div>
+
+            <p class="note">Plans are prepaid. If your plan expires, access is paused but your data remains safe. Resume
+                  anytime.</p>
+      </section>
+
+</body>
+
+</html>

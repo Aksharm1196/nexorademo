@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Nexora Payments</title>
+      <style>
+            body {
+                  margin: 0;
+                  font-family: Inter, system-ui;
+                  background: #0b0f14;
+                  color: #e5e7eb
+            }
+
+            .layout {
+                  display: flex;
+                  min-height: 100vh
+            }
+
+            .sidebar {
+                  width: 220px;
+                  background: #121826;
+                  border-right: 1px solid #1f2937;
+                  padding: 20px
+            }
+
+            .brand {
+                  font-weight: 800;
+                  font-size: 20px;
+                  margin-bottom: 30px
+            }
+
+            .nav a {
+                  display: block;
+                  padding: 10px 12px;
+                  margin-bottom: 8px;
+                  border-radius: 10px;
+                  color: #94a3b8;
+                  text-decoration: none
+            }
+
+            .nav a.active,
+            .nav a:hover {
+                  background: #0b1220;
+                  color: #e5e7eb
+            }
+
+            .main {
+                  flex: 1;
+                  padding: 24px
+            }
+
+            .top {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 20px
+            }
+
+            .logout {
+                  color: #94a3b8;
+                  cursor: pointer
+            }
+
+            .summary {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                  gap: 14px;
+                  margin-bottom: 22px
+            }
+
+            .box {
+                  background: #121826;
+                  border: 1px solid #1f2937;
+                  border-radius: 14px;
+                  padding: 16px
+            }
+
+            .box h4 {
+                  margin: 0 0 6px;
+                  font-size: 13px;
+                  color: #94a3b8
+            }
+
+            .box .value {
+                  font-size: 22px;
+                  font-weight: 800
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  background: #121826;
+                  border: 1px solid #1f2937;
+                  border-radius: 14px;
+                  overflow: hidden
+            }
+
+            th,
+            td {
+                  padding: 14px;
+                  text-align: left;
+                  border-bottom: 1px solid #1f2937;
+                  font-size: 14px
+            }
+
+            th {
+                  color: #94a3b8;
+                  font-weight: 600
+            }
+
+            tr:last-child td {
+                  border-bottom: none
+            }
+
+            .tag {
+                  padding: 4px 10px;
+                  border-radius: 999px;
+                  font-size: 12px;
+                  font-weight: 700
+            }
+
+            .paid {
+                  background: #064e3b;
+                  color: #6ee7b7
+            }
+
+            .pending {
+                  background: #3f1d1d;
+                  color: #fca5a5
+            }
+      </style>
+</head>
+
+<body>
+      <div class="layout">
+            <aside class="sidebar">
+                  <div class="brand">Nexora</div>
+                  <nav class="nav">
+                        <a href="dashboard.html">Dashboard</a>
+                        <a href="clients.html">Clients</a>
+                        <a href="payments.html" class="active">Payments</a>
+                        <a href="#">Reports</a>
+                        <a href="#">Settings</a>
+                  </nav>
+            </aside>
+
+            <main class="main">
+                  <div class="top">
+                        <h2>Payments</h2>
+                        <div class="logout" onclick="location.href='login.html'">Logout</div>
+                  </div>
+
+                  <div class="summary">
+                        <div class="box">
+                              <h4>Total Collected</h4>
+                              <div class="value">₹48,500</div>
+                        </div>
+                        <div class="box">
+                              <h4>Total Pending</h4>
+                              <div class="value">₹12,000</div>
+                        </div>
+                        <div class="box">
+                              <h4>This Month</h4>
+                              <div class="value">₹18,000</div>
+                        </div>
+                  </div>
+
+                  <table>
+                        <thead>
+                              <tr>
+                                    <th>Date</th>
+                                    <th>Client</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                              <tr>
+                                    <td>05 Aug 2025</td>
+                                    <td>Rahul Sharma</td>
+                                    <td>₹2,000</td>
+                                    <td><span class="tag paid">Paid</span></td>
+                              </tr>
+                              <tr>
+                                    <td>03 Aug 2025</td>
+                                    <td>Pooja Patel</td>
+                                    <td>₹1,500</td>
+                                    <td><span class="tag pending">Pending</span></td>
+                              </tr>
+                              <tr>
+                                    <td>01 Aug 2025</td>
+                                    <td>Aman Khan</td>
+                                    <td>₹3,000</td>
+                                    <td><span class="tag pending">Pending</span></td>
+                              </tr>
+                        </tbody>
+                  </table>
+            </main>
+      </div>
+</body>
+
+</html>

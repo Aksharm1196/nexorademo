@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Nexora | Live Demo</title>
+      <style>
+            body {
+                  margin: 0;
+                  font-family: Inter, system-ui;
+                  background: #0b0f14;
+                  color: #e5e7eb
+            }
+
+            header {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 20px 40px;
+                  border-bottom: 1px solid #1f2937
+            }
+
+            .brand {
+                  font-size: 22px;
+                  font-weight: 800
+            }
+
+            nav a {
+                  margin-left: 20px;
+                  color: #94a3b8;
+                  text-decoration: none;
+                  font-weight: 600
+            }
+
+            nav a:hover {
+                  color: #e5e7eb
+            }
+
+            .container {
+                  padding: 40px;
+                  max-width: 1000px
+            }
+
+            h1 {
+                  margin-bottom: 10px
+            }
+
+            p {
+                  color: #9ca3af;
+                  max-width: 700px
+            }
+
+            .steps {
+                  margin-top: 30px;
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                  gap: 16px
+            }
+
+            .card {
+                  background: #121826;
+                  border: 1px solid #1f2937;
+                  border-radius: 16px;
+                  padding: 18px
+            }
+
+            .card h3 {
+                  margin: 0 0 8px
+            }
+
+            .btn {
+                  margin-top: 30px;
+                  padding: 14px 20px;
+                  border-radius: 14px;
+                  border: none;
+                  font-weight: 700;
+                  cursor: pointer;
+                  background: linear-gradient(135deg, #5eead4, #60a5fa)
+            }
+      </style>
+</head>
+
+<body>
+      <header>
+            <div class="brand">Nexora</div>
+            <nav>
+                  <a href="index.html">Home</a>
+                  <a href="login.html">Login</a>
+            </nav>
+      </header>
+
+      <div class="container">
+            <h1>Interactive Demo</h1>
+            <p>This is a sample business dashboard. Data shown is for demonstration only.</p>
+
+            <div class="steps">
+                  <div class="card">
+                        <h3>Dashboard</h3>
+                        <p>See monthly collection and pending payments.</p>
+                  </div>
+                  <div class="card">
+                        <h3>Clients</h3>
+                        <p>Manage customers and send payment reminders.</p>
+                  </div>
+                  <div class="card">
+                        <h3>Payments</h3>
+                        <p>Track paid and pending transactions clearly.</p>
+                  </div>
+            </div>
+
+            <button class="btn" onclick="location.href='login.html'">Try Demo Login</button>
+      </div>
+</body>
+
+</html>
