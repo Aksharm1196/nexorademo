@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Nexora – Payments & Clients</title>
+      <style>
+            body {
+                  margin: 0;
+                  font-family: Inter, system-ui;
+                  background: #0b0f14;
+                  color: #e5e7eb;
+            }
+
+            .layout {
+                  display: flex;
+                  min-height: 100vh;
+            }
+
+            .sidebar {
+                  width: 220px;
+                  background: #121826;
+                  border-right: 1px solid #1f2937;
+                  padding: 20px;
+            }
+
+            .brand {
+                  font-weight: 800;
+                  font-size: 20px;
+                  margin-bottom: 30px;
+            }
+
+            .nav a {
+                  display: block;
+                  padding: 10px 12px;
+                  margin-bottom: 8px;
+                  border-radius: 10px;
+                  color: #94a3b8;
+                  text-decoration: none;
+            }
+
+            .nav a.active,
+            .nav a:hover {
+                  background: #0b1220;
+                  color: #e5e7eb;
+            }
+
+            .main {
+                  flex: 1;
+                  padding: 24px;
+            }
+
+            .top {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 20px;
+            }
+
+            .logout {
+                  color: #94a3b8;
+                  cursor: pointer;
+            }
+
+            .summary {
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                  gap: 14px;
+                  margin-bottom: 26px;
+            }
+
+            .box {
+                  background: #121826;
+                  border: 1px solid #1f2937;
+                  border-radius: 14px;
+                  padding: 16px;
+            }
+
+            .box h4 {
+                  margin: 0 0 6px;
+                  font-size: 13px;
+                  color: #94a3b8;
+            }
+
+            .box .value {
+                  font-size: 22px;
+                  font-weight: 800;
+            }
+
+            table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  background: #121826;
+                  border: 1px solid #1f2937;
+                  border-radius: 14px;
+                  overflow: hidden;
+                  margin-bottom: 28px;
+            }
+
+            th,
+            td {
+                  padding: 14px;
+                  text-align: left;
+                  border-bottom: 1px solid #1f2937;
+                  font-size: 14px;
+            }
+
+            th {
+                  color: #94a3b8;
+                  font-weight: 600;
+            }
+
+            tr:last-child td {
+                  border-bottom: none;
+            }
+
+            .compact .detail-only {
+                  display: none;
+            }
+
+            .status-paid {
+                  color: #6ee7b7;
+                  font-weight: 700;
+            }
+
+            .status-partial {
+                  color: #fde68a;
+                  font-weight: 700;
+            }
+
+            .status-pending {
+                  color: #fca5a5;
+                  font-weight: 700;
+            }
+
+            .btn {
+                  background: #2563eb;
+                  color: #fff;
+                  border: none;
+                  padding: 8px 14px;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  font-size: 14px;
+            }
+
+            .btn-whatsapp {
+                  background: #25d366;
+                  color: #0b0f14;
+                  padding: 6px 12px;
+                  border-radius: 999px;
+                  font-size: 12px;
+                  text-decoration: none;
+                  font-weight: 700;
+            }
+
+            .section-header {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin: 20px 0 12px;
+            }
+
+            .view-toggle {
+                  color: #94a3b8;
+                  cursor: pointer;
+                  font-size: 13px;
+            }
+
+            .view-toggle:hover {
+                  color: #e5e7eb;
+                  text-decoration: underline;
+            }
+      </style>
+</head>
+
+<body>
+      <div class="layout">
+            <aside class="sidebar">
+                  <div class="brand">Nexora</div>
+                  <nav class="nav">
+                        <a href="dashboard.html">Dashboard</a>
+                        <a href="clients.html">Clients</a>
+                        <a href="payments.html" class="active">Payments</a>
+                  </nav>
+            </aside>
+
+            <main class="main">
+                  <div class="top">
+                        <h2>Payments & Clients</h2>
+                        <div class="logout" onclick="location.href='login.html'">Logout</div>
+                  </div>
+
+                  <div class="summary">
+                        <div class="box">
+                              <h4>Total Collected</h4>
+                              <div class="value" id="totalCollected">₹0</div>
+                        </div>
+                        <div class="box">
+                              <h4>Total Pending</h4>
+                              <div class="value" id="totalPending">₹0</div>
+                        </div>
+                  </div>
+
+                  <div id="clientsSection">
+                        <div class="section-header">
+                              <h3>Clients</h3>
+                              <div>
+                                    <span id="toggleView" class="view-toggle">Compact</span>&nbsp;&nbsp;
+                                    <button class="btn">+ Add Client</button>
+                              </div>
+                        </div>
+
+                        <table>
+                              <thead>
+                                    <tr>
+                                          <th>Client</th>
+                                          <th>Phone</th>
+                                          <th class="detail-only">Total (₹)</th>
+                                          <th class="detail-only">Paid (₹)</th>
+                                          <th class="detail-only">Pending (₹)</th>
+                                          <th>Status</th>
+                                          <th class="detail-only">Reminder</th>
+                                    </tr>
+                              </thead>
+                              <tbody id="clientsTable"></tbody>
+                        </table>
+                  </div>
+            </main>
+      </div>
+
+      <script>
+            const clients = [
+                  { name: 'Rahul Shah', phone: '9876543210', total: 12000, paid: 8000 },
+                  { name: 'Amit Patel', phone: '9123456780', total: 6000, paid: 0 },
+                  { name: 'Neha Jain', phone: '9988776655', total: 10000, paid: 10000 },
+                  { name: 'Karan Mehta', phone: '9000011111', total: 8000, paid: 3000 },
+                  { name: 'Riya Desai', phone: '9888877777', total: 5000, paid: 2000 }
+            ];
+
+            const table = document.getElementById('clientsTable');
+            const toggle = document.getElementById('toggleView');
+
+            let compact = true;
+            const LIMIT = 3;
+
+            function renderClients() {
+                  table.innerHTML = '';
+                  let collected = 0;
+                  let pendingSum = 0;
+
+                  const visible = compact ? clients.slice(0, LIMIT) : clients;
+
+                  visible.forEach(c => {
+                        const pending = c.total - c.paid;
+                        collected += c.paid;
+                        pendingSum += pending;
+
+                        let status = 'Pending';
+                        let cls = 'status-pending';
+
+                        if (pending === 0) {
+                              status = 'Paid';
+                              cls = 'status-paid';
+                        } else if (c.paid > 0) {
+                              status = 'Partial';
+                              cls = 'status-partial';
+                        }
+
+                        const msg = `Hello ${c.name}, your pending fees is ₹${pending}.`;
+
+                        table.innerHTML += `
+                  <tr>
+                    <td>${c.name}</td>
+                    <td>${c.phone}</td>
+                    <td>₹${c.total}</td>
+                    <td>₹${c.paid}</td>
+                    <td>₹${pending}</td>
+                    <td class="${cls}">${status}</td>
+                    <td>
+                      <a class="btn-whatsapp" target="_blank"
+                         href="https://wa.me/91${c.phone}?text=${encodeURIComponent(msg)}">
+                        Send
+                      </a>
+                    </td>
+                  </tr>`;
+                  });
+
+                  document.getElementById('totalCollected').innerText = `₹${collected}`;
+                  document.getElementById('totalPending').innerText = `₹${pendingSum}`;
+            }
+
+            toggle.onclick = () => {
+                  compact = !compact;
+                  toggle.innerText = compact ? 'Detail' : 'Compact';
+                  renderClients();
+            };
+
+            renderClients();
+      </script>
+
+</body>
+
+</html>
